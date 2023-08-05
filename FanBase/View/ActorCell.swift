@@ -8,8 +8,16 @@
 import UIKit
 
 
-class ActorCell: UITableViewCell {
-    @IBOutlet weak var actorCollectionView: UICollectionView!
+class ActorCell: UICollectionViewCell {
 
+    @IBOutlet weak var actorImage: UIImageView!
+    @IBOutlet weak var actorName: UILabel!
+    
+    
+    func updateViews(product: Actor) {
+        actorImage.image = UIImage(named: product.imageName)
+        actorName.text = product.name
+       
+    }
    
 }
