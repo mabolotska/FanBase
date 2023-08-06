@@ -10,13 +10,31 @@ import UIKit
 class MoviesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var moviesTableView: UITableView!
-  
-    
+    var actors: [Actor] = [] {
+            didSet {
+                moviesTableView.reloadData()
+            }
+        }
+    var actorsData: [[Actor]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         moviesTableView.dataSource = self
         moviesTableView.delegate = self
+        
+        let goodfellasActors = [
+                    Actor(name: "Ray Liotta", imageName: "7.jpg"),
+                    Actor(name: "Robert de Niro", imageName: "8.jpg"),
+                    Actor(name: "Joe Pesci", imageName: "9.jpg")
+                ]
+
+                let otherMovieActors = [
+                    Actor(name: "Actor 1", imageName: "1.jpg"),
+                    Actor(name: "Actor 2", imageName: "2.jpg"),
+                    Actor(name: "Actor 3", imageName: "3.jpg")
+                ]
+
+                actorsData = [goodfellasActors, otherMovieActors]
     }
 
 
@@ -41,7 +59,10 @@ class MoviesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-          cell.movieCollectionView.tag = indexPath.section // Set the tag to identify the section
+        
+    
+        
+        cell.movieCollectionView.tag = indexPath.section
           return cell
       }
 }

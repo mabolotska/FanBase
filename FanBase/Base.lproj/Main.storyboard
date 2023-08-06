@@ -92,6 +92,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8bC-Xf-vdC" id="Vv7-1D-NbS"/>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="GND-64-ksu"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

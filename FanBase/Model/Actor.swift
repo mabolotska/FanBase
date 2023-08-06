@@ -11,8 +11,8 @@ struct Actor {
   
     
     
-    private(set) public var name: String
-    private(set) public var imageName: String
+     public var name: String
+    public var imageName: String
     
     init(name: String, imageName: String) {
         self.name = name

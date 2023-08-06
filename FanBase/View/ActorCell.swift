@@ -19,5 +19,10 @@ class ActorCell: UICollectionViewCell {
         actorName.text = product.name
        
     }
+    
+    func configure(with actor: Actor) {
+        actorImage.image = UIImage(named: actor.imageName)
+        actorName.text = actor.name
+       }
    
 }
